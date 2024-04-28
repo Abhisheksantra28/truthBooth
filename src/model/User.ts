@@ -18,10 +18,10 @@ const MessageSchema: Schema<MessageInterface> = new Schema({
 });
 
 export interface UserInterface extends Document {
-  username: String;
-  email: String;
-  password: String;
-  verifyCode: String;
+  username: string;
+  email: string;
+  password: string;
+  verifyCode: string;
   verifyCodeExpiry: Date;
   isAcceptingMessage: boolean;
   isVerified: boolean;
