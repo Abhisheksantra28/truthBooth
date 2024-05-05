@@ -87,7 +87,7 @@ const page = () => {
       console.error("Error signing up: ", error);
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
-        title: "Error",
+        title: "Signup failed",
         description: axiosError.response?.data.message ?? "Error signing up",
         variant: "destructive",
       });
@@ -132,8 +132,7 @@ const page = () => {
                         : "text-red-500"
                     }`}
                   >
-                   test{usernameMessage}
-                   
+                    {usernameMessage}
                   </p>
                   <FormMessage />
                 </FormItem>

@@ -24,13 +24,13 @@ export const authOptions: NextAuthOptions = {
         try {
           const user = await User.findOne({
             $or: [
-              { email: credentials.identifier.email },
-              { username: credentials.identifier.username },
+              { email: credentials.identifier },
+              { username: credentials.identifier},
             ],
           });
 
           if (!user) {
-            throw new Error("No user found with this email");
+            throw new Error("No user found with this email or username");
           }
 
           if (!user.isVerified) {
