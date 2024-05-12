@@ -33,7 +33,7 @@ const Home = () => {
         {/* Carousel for Messages */}
         <Carousel
           plugins={[Autoplay({ delay: 2000 })]}
-          className="w-full max-w-lg md:max-w-xl mt-10 text-black"
+          className="w-full max-w-xs md:max-w-xl mt-10 text-black"
         >
           <CarouselContent>
             {messages.map((message, index) => (
