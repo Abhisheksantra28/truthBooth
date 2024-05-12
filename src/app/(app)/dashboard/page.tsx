@@ -20,8 +20,16 @@ const page = () => {
   const [messages, setMessages] = useState<MessageInterface[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSwitchLoading, setIsSwitchLoading] = useState(false);
-
   const { toast } = useToast();
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+
+
 
   const handleDeleteMessage = (messageId: string) => {
     messages.filter((message) => message._id !== messageId);
@@ -114,6 +122,10 @@ const page = () => {
     }
   };
 
+  if (!session || !session.user) {
+    return <div>Please Login</div>;
+  }
+
   const { username } = session?.user as User;
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${username}`;
@@ -125,10 +137,6 @@ const page = () => {
       description: "Profile URL has been copied to clipboard",
     });
   };
-
-  if (!session || !session.user) {
-    return <div>Please Login</div>;
-  }
 
   return (
     <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
