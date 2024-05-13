@@ -18,7 +18,7 @@ const Navbar = () => {
         </Link>
         {session ? (
           <>
-            <span className="mr-4">
+            <span className="mr-4 text-sm md:text-base font-semibold">
               Welcome, {user?.username || user?.email}
             </span>
             <Button
