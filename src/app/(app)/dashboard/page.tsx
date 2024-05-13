@@ -22,11 +22,11 @@ const page = () => {
   const [isSwitchLoading, setIsSwitchLoading] = useState(false);
   const { toast } = useToast();
 
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
 
 

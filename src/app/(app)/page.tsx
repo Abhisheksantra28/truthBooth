@@ -12,15 +12,15 @@ import { Mail } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const Home = () => {
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
   return (
     <>
-      <main className="flex flex-grow flex-col items-center justify-center px-4 md:px-24 py-12 text-black">
+      <main className="flex flex-grow flex-col items-center justify-center px-4 md:px-24 py-12 text-black bg-gray-100">
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-bold">
             Dive into the World of Anonymous Feedback
@@ -33,7 +33,7 @@ const Home = () => {
         {/* Carousel for Messages */}
         <Carousel
           plugins={[Autoplay({ delay: 2000 })]}
-          className="w-full max-w-xs md:max-w-xl mt-10 text-black"
+          className="w-full max-w-md md:max-w-xl mt-10 text-black"
         >
           <CarouselContent>
             {messages.map((message, index) => (
